@@ -13,12 +13,13 @@ function closeMenu() {
 
 
 function searchMotorcycles() {
-    const searchTerm = document.querySelector('input[type="text"]').value.trim();
+    const searchTerm = document.querySelector('input[type="text"]').value.trim().toLowerCase();
     const apiKey = 'zAwAjj/EKd4+VfWxKCJFng==SEtRAmMkvpuHC19l';
     
     const searchParams = new URLSearchParams({
         make: searchTerm,
-        model: searchTerm
+        model: searchTerm,
+        limit: 6
     });
 
     fetch(`https://api.api-ninjas.com/v1/motorcycles?${searchParams.toString()}`, {
@@ -28,7 +29,9 @@ function searchMotorcycles() {
     })
     .then(response => response.json())
     .then(data => {
-        displayMotorcycles(data);
+        console.log('API Response:', data);
+        const limitedData = Array.isArray(data) ? data.slice(0, 6) : [];
+        displayMotorcycles(limitedData);
     })
     .catch(error => console.error('Error:', error));
 }
