@@ -9,55 +9,57 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <section id= "landing">
-        <nav>
-            <div class="nav__container">    
-                <img class="logo" alt="logo" src="./assets/blinker-icon.4f9b2663.png">
-                <ul class="nav__links">
-                    <li><a href="#" class="nav__link no-cursor">Home</a></li>
-                    <li><a href="#" class="nav__link no-cursor">Find Your Bike</a></li>
-                    <li><a href="#" class="nav__link-button no-cursor">Sign In</a></li>
-                </ul>
-            </div>
-            <button class="btn__menu" onclick="openMenu()">
-                <i class="fa-solid fa-ellipsis"></i>
-            </button>
-            <div class="menu__backdrop">
-                <buttonc class="btn__menu btn__menu--close" onclick="closeMenu()">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-                <ul class="menu__links">
-                    <li class="menu__list">
-                        <a href="#" class="menu__link" onclick="closeMenu()">Home</a>
-                    </li>
-                    <li class="menu__list">
-                        <a href="#" class="menu__link" onclick="closeMenu()">Find Your Bike</a>
-                    </li>
-                    <li class="menu__list">
-                        <a href="#" class="menu__link" onclick="closeMenu()">Sign In</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <header>
-            <div class="content-wrapper">
-                <h1>The most awarded Motorcycle subscription platform in Puerto Rico</h1>
-                <h2>Find the perfect motorcycle for you, with <span>Blinker</span></h2>
-                <div class="input-wrapper">
-                    <input type="text" placeholder="Search by make or model">
-                    <button class="not-loading" onclick="searchMotorcycles()">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
+    <main>
+        <section id= "landing">
+            <nav>
+                <div class="nav__container">    
+                    <img class="logo" alt="logo" src="./assets/motogo.png">
+                    <ul class="nav__links">
+                        <li><a href="#" class="nav__link no-cursor">Home</a></li>
+                        <li><a href="#" class="nav__link no-cursor">Find Your Bike</a></li>
+                        <li><a href="#" class="nav__link-button no-cursor">Sign In</a></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="image-wrapper">
-                <img src="./assets/undraw_order_a_car_-3-tww.svg" alt="Cars">
-            </div>
-        </header>
-    </section>
+                <button class="btn__menu" onclick="openMenu()">
+                    <i class="fa-solid fa-ellipsis"></i>
+                </button>
+                <div class="menu__backdrop">
+                    <buttonc class="btn__menu btn__menu--close" onclick="closeMenu()">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                    <ul class="menu__links">
+                        <li class="menu__list">
+                            <a href="#" class="menu__link" onclick="closeMenu()">Home</a>
+                        </li>
+                        <li class="menu__list">
+                            <a href="#" class="menu__link" onclick="closeMenu()">Find Your Bike</a>
+                        </li>
+                        <li class="menu__list">
+                            <a href="#" class="menu__link" onclick="closeMenu()">Sign In</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <header>
+                <div class="content-wrapper">
+                    <h1>The most awarded Motorcycle subscription platform in Puerto Rico</h1>
+                    <h2>Find the perfect motorcycle for you, with <span>Blinker</span></h2>
+                    <div class="input-wrapper">
+                        <input type="text" placeholder="Search by make or model">
+                        <button class="not-loading" onclick="searchMotorcycles()">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="image-wrapper">
+                    <img src="./assets/undraw_order_a_car_-3-tww.svg" alt="Cars">
+                </div>
+            </header>
+        </section>
+    </main>
     <footer>
         <section id="bottom">
-            <div class="content-wrapper">
+            <div class="footer-wrapper">
                 <ul class="footer__links">
                     <li><a href="#" class="footer__link no-cursor">Home</a></li>
                     <li><a href="#" class="footer__link no-cursor">Find Your Bike</a></li>
@@ -66,7 +68,7 @@
             </div>
         </section>
         <section id="copyright">
-            <div class="footer-wrapper">
+            <div class="footer-wrapper2">
                 <div class="footer__info">
                     <div class="footer__logo">
                         <h7>blinker</h7>

@@ -57,10 +57,17 @@ function displayMotorcycles(motorcycles) {
             const motorcycleBox = document.createElement('div');
             motorcycleBox.className = 'motorcycle-box';
             motorcycleBox.innerHTML = `
-                <h3>${motorcycle.make} ${motorcycle.model}</h3>
-                <p>Year: ${motorcycle.year}</p>
-                <p>Engine: ${motorcycle.engine}</p>
-                <p>Power: ${motorcycle.power}</p>
+            <div class=moto__data-container>
+                <div class=icon__container>
+                    <i class="fa-solid fa-motorcycle"></i>
+                </div>    
+                <div class=moto__data>
+                    <h3>${motorcycle.make} ${motorcycle.model}</h3>
+                    <p>Year: ${motorcycle.year}</p>
+                    <p>Engine: ${motorcycle.engine}</p>
+                    <p>Power: ${motorcycle.power}</p>
+                    </div>
+            </div>        
             `;
             motorcycleGrid.appendChild(motorcycleBox);
         });
