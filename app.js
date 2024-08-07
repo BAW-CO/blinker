@@ -16,6 +16,10 @@ function searchMotorcycles() {
     const searchTerm = document.querySelector('input[type="text"]').value.trim().toLowerCase();
     const apiKey = 'zAwAjj/EKd4+VfWxKCJFng==SEtRAmMkvpuHC19l';
     
+    const searchButton = document.querySelector('.search-button');
+    searchButton.classList.remove('not-loading');
+    searchButton.classList.add('loading');
+    
     const searchParams = new URLSearchParams({
         make: searchTerm,
         model: searchTerm,
@@ -32,8 +36,12 @@ function searchMotorcycles() {
         console.log('API Response:', data);
         const limitedData = Array.isArray(data) ? data.slice(0, 6) : [];
         displayMotorcycles(limitedData);
+        searchButton.classList.remove('loading');
+        searchButton.classList.add('not-loading');
     })
     .catch(error => console.error('Error:', error));
+    searchButton.classList.remove('loading');
+    searchButton.classList.add('not-loading');
 }
 
 function displayMotorcycles(motorcycles) {

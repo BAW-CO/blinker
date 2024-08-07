@@ -33,7 +33,7 @@ nav {
     height: 90px;
     display: flex;
     width: 100%;
-    background-color: rgb(30, 30, 30);
+    background-color: rgb(30, 30, 30, 0.90);
     align-items: center;
 }
 
@@ -260,7 +260,7 @@ footer {
     bottom: 0%;
     width: 100%;
     padding-bottom: 32px;
-    background-color: rgb(30, 30, 30);
+    background-color: rgb(30, 30, 30, 0.90);
     margin-top: auto;
 }
 
@@ -367,4 +367,48 @@ h7 {
     font-size: 18px;
     color: #666;
     margin-top: 20px;
+}
+
+
+
+
+
+.search-button {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.search-button.loading {
+    color: black;
+}
+
+.search-button.loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
+
+
+.fa-spinner {
+    animation: rotate 600ms infinite linear;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
 }
