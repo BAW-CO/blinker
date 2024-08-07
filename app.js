@@ -22,7 +22,6 @@ function searchMotorcycles() {
     
     const searchParams = new URLSearchParams({
         make: searchTerm,
-        model: searchTerm,
         limit: 6
     });
 
@@ -36,12 +35,14 @@ function searchMotorcycles() {
         console.log('API Response:', data);
         const limitedData = Array.isArray(data) ? data.slice(0, 6) : [];
         displayMotorcycles(limitedData);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    })
+    .finally(() => {
         searchButton.classList.remove('loading');
         searchButton.classList.add('not-loading');
-    })
-    .catch(error => console.error('Error:', error));
-    searchButton.classList.remove('loading');
-    searchButton.classList.add('not-loading');
+    });
 }
 
 function displayMotorcycles(motorcycles) {
