@@ -81,6 +81,7 @@ a {
 
 .nav__link {
     margin-right: 16px;
+    text-align: center;
 }
 
 .nav__link-button {
@@ -90,6 +91,7 @@ a {
     color: rgb(30, 30, 30);
     font-weight: 700;
     transition: all 300ms ease;
+    text-align: center;
 }
 
 .nav__link:hover,
@@ -104,7 +106,7 @@ a {
     top: 0;
     left: 0;
     right: 0;
-    bottom: 50%;
+    bottom: 0;
     z-index: 3;
     display: flex;
     justify-content: center;
@@ -137,7 +139,7 @@ a {
 
 .menu__link {
     color: white;
-    font-size: 16px;
+    font-size: 40px;
 }
 
 .btn__menu--close {
@@ -164,9 +166,6 @@ button {
 button:active {
     transform: translateY(1px);
 }
-
-
-
 
 .content-wrapper {
     display: flex;
@@ -244,6 +243,20 @@ button.not-loading {
     height: 60px;
 }
 
+button.not-loading .fa-spinner {
+    display: none;
+}
+
+button .fa-spinner {
+    display: none;
+}
+button.loading .fa-magnifying-glass {
+    display: none;
+}
+button.loading .fa-spinner {
+    display: inline-block;
+}
+
 .image-wrapper {
     width: 100%;
     display: flex;
@@ -318,12 +331,12 @@ h7 {
 }
 
 
-\\ search results \\
+/*search results*/
 
 .motorcycle-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 12px;
     margin-top: 20px;
 }
 
@@ -339,12 +352,25 @@ h7 {
 .motorcycle-box h3 {
     margin-top: 0;
     color: #333;
+    font-size: 18px;
+}
+
+.motorcycle-box h3 a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 18px;
+    display: inline-flex;
+}
+
+.motorcycle-box h3 a:hover {
+    color: rgb(247, 98, 215);
+    text-decoration: underline;
 }
 
 .motorcycle-box p {
     margin: 5px 0;
     color: #666;
-    
 }
 
 .moto__data-container {
@@ -367,7 +393,7 @@ h7 {
     margin-top: 20px;
 }
 
-\\ Search Button Loading \\
+/*Search Button Loading*/
 
 .search-button {
     position: relative;
@@ -416,9 +442,8 @@ h7 {
     border: 2px solid #fff;
     border-top: 2px solid transparent;
     border-radius: 50%;
-    animation: spin 1s linear infinite;
+    animation: spin 1.5s linear infinite;
 }
-
 
 @keyframes spin {
     0% { transform: translate(-50%, -50%) rotate(0deg); }
@@ -439,4 +464,79 @@ h7 {
 
 .loading .spinner {
     display: block;
+}
+
+/* responsiveness */
+
+@media (max-width: 768px) {
+    .header__description {
+        padding: 0 24px;
+    }
+    h1 {
+        font-size: 32px;
+    }
+    h2 {
+        font-size: 26px;
+    }
+    button {
+        font-size: 18px;
+    }
+
+    .input {
+        font-size: 18px;
+    }
+
+    .footer__links {
+        display: none;
+    }
+
+    h7 {
+        font-size: 16px;
+    }
+
+    .copyright {
+        font-size: 12px;
+    }
+
+    .social__link {
+        gap: 4px;
+        font-size: 16px;
+    }
+    .logo {
+        width: 80px;
+    }
+    .footer-wrapper {
+        display: none;
+    }
+    .footer-wrapper2 {
+        padding: 24px;
+    }
+   
+    
+}
+
+
+@media (max-width:550px) {
+    .nav__links {
+        display: none;
+    }
+
+    .btn__menu {
+        display: block;
+    }
+    .content-wrapper {
+        padding: 12px; 
+    }
+    .footer-wrapper2 {
+        padding: 24px 24px 0px 24px;
+    }
+    .social__link {
+        gap: 0px;
+        font-size: 16px;
+    }
+
+    h7 {
+        display: none;
+    }
+    
 }

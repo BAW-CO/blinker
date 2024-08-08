@@ -19,25 +19,25 @@
                         <li><a href="#" class="nav__link no-cursor">Find Your Bike</a></li>
                         <li><a href="#" class="nav__link-button no-cursor">Sign In</a></li>
                     </ul>
-                </div>
-                <button class="btn__menu" onclick="openMenu()">
-                    <i class="fa-solid fa-ellipsis"></i>
-                </button>
-                <div class="menu__backdrop">
-                    <buttonc class="btn__menu btn__menu--close" onclick="closeMenu()">
-                        <i class="fa-solid fa-xmark"></i>
+                    <button class="btn__menu" onclick="openMenu()">
+                        <i class="fa-solid fa-ellipsis"></i>
                     </button>
-                    <ul class="menu__links">
-                        <li class="menu__list">
-                            <a href="#" class="menu__link" onclick="closeMenu()">Home</a>
-                        </li>
-                        <li class="menu__list">
-                            <a href="#" class="menu__link" onclick="closeMenu()">Find Your Bike</a>
-                        </li>
-                        <li class="menu__list">
-                            <a href="#" class="menu__link" onclick="closeMenu()">Sign In</a>
-                        </li>
-                    </ul>
+                    <div class="menu__backdrop">
+                        <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                        <ul class="menu__links">
+                            <li class="menu__list">
+                                <a href="#" class="menu__link" onclick="closeMenu()">Home</a>
+                            </li>
+                            <li class="menu__list">
+                                <a href="#" class="menu__link" onclick="closeMenu()">Find Your Bike</a>
+                            </li>
+                            <li class="menu__list">
+                                <a href="#" class="menu__link" onclick="closeMenu()">Sign In</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
             <header>
@@ -45,10 +45,10 @@
                     <h1>The most awarded Motorcycle subscription platform in Puerto Rico</h1>
                     <h2>Find the perfect motorcycle for you with <span>Moto-Go</span></h2>
                     <div class="input-wrapper">
-                        <input type="text" placeholder="Search by make or model">
+                        <input class="input" type="text" placeholder="Search by make or model">
                         <button class="search-button not-loading loading" onclick="searchMotorcycles()">
                             <i class="fa-solid fa-magnifying-glass"></i>
-                            <div class="spinner"></div>
+                            <i class="fa-solid fa-spinner fa-spin"></i>
                         </button>
                     </div>
                 </div>

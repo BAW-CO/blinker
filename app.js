@@ -42,12 +42,11 @@ function searchMotorcycles() {
     .finally(() => {
         searchButton.classList.remove('loading');
         searchButton.classList.add('not-loading');
-    });
+    })
 }
 
 function displayMotorcycles(motorcycles) {
     const contentWrapper = document.querySelector('.content-wrapper');
-    
     const existingContent = document.querySelector('.motorcycle-grid, .no-results');
     if (existingContent) {
         existingContent.remove();
@@ -58,7 +57,15 @@ function displayMotorcycles(motorcycles) {
         noResults.className = 'no-results';
         noResults.textContent = 'No results';
         contentWrapper.appendChild(noResults);
-    } else {
+    } 
+
+    if (!motorcycles) {
+        const noResults = document.createElement('div');
+        noResults.className = 'no-results';
+        noResults.textContent = 'No results';
+        contentWrapper.appendChild(noResults);
+    }
+    else {
         const motorcycleGrid = document.createElement('div');
         motorcycleGrid.className = 'motorcycle-grid';
 
@@ -71,7 +78,7 @@ function displayMotorcycles(motorcycles) {
                     <i class="fa-solid fa-motorcycle"></i>
                 </div>    
                 <div class=moto__data>
-                    <h3>${motorcycle.make} ${motorcycle.model}</h3>
+                    <h3>${motorcycle.make} <a href="#" class="result__link">${motorcycle.model}</a></h3>
                     <p>Year: ${motorcycle.year}</p>
                     <p>Engine: ${motorcycle.engine}</p>
                     <p>Power: ${motorcycle.power}</p>
@@ -84,3 +91,7 @@ function displayMotorcycles(motorcycles) {
         contentWrapper.appendChild(motorcycleGrid);
     }
 }
+
+setTimeout(() => {
+    displayMotorcycles();
+});
