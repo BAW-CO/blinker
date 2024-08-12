@@ -229,6 +229,7 @@ input {
     display: none;
 }
 
+.search-button,
 button.not-loading {
     background-color: rgb(247, 98, 215);
     color: rgb(30, 30, 30);
