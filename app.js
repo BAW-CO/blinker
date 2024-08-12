@@ -38,6 +38,15 @@ function searchMotorcycles() {
     })
     .catch(error => {
         console.error('Error:', error);
+        const contentWrapper = document.querySelector('.content-wrapper');
+        const existingContent = document.querySelector('.motorcycle-grid, .no-results');
+        if (existingContent) {
+            existingContent.remove();
+        }
+        const errorMessage = document.createElement('div');
+        errorMessage.className = 'no-results';
+        errorMessage.textContent = 'Search failed. Try searching by make.';
+        contentWrapper.appendChild(errorMessage);
     })
     .finally(() => {
         searchButton.classList.remove('loading');
@@ -65,6 +74,9 @@ function displayMotorcycles(motorcycles) {
         noResults.textContent = 'No results';
         contentWrapper.appendChild(noResults);
     }
+
+  
+
     else {
         const motorcycleGrid = document.createElement('div');
         motorcycleGrid.className = 'motorcycle-grid';
